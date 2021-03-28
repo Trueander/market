@@ -14,6 +14,8 @@ public class ComprasProducto {
     private Boolean estado;
 
     @ManyToOne
+    //Cuando ComprasProducto se guarde en cascada va a saber a qué primary key pertenece cada uno de los productos que está en una compra
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
